@@ -52,19 +52,19 @@ if (!files.length) {
 const SpritesmithTemplate = function(data) {
   // pc
   const icons = {}
-  let tpl = `.ico { 
-  display: inline-block; 
-  background-image: url(${data.sprites[0].image}); 
-  background-size: ${data.spritesheet.width}px ${data.spritesheet.height}px; 
+  let tpl = `.ico {
+  display: inline-block;
+  background-image: url(${data.sprites[0].image});
+  background-size: ${data.spritesheet.width}px ${data.spritesheet.height}px;
 }`
 
   data.sprites.forEach(sprite => {
     const name = '' + sprite.name.toLocaleLowerCase().replace(/_/g, '-')
     icons[`${name}.png`] = true
-    tpl = `${tpl} 
+    tpl = `${tpl}
 .ico-${name}{
-  width: ${sprite.width}px; 
-  height: ${sprite.height}px; 
+  width: ${sprite.width}px;
+  height: ${sprite.height}px;
   background-position: ${sprite.offset_x}px ${sprite.offset_y}px;
 }
 `
